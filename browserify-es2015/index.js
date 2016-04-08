@@ -23,7 +23,7 @@ var defaultOptions = {
   watchifyOptions: {},
   babelifyOptions: {
     presets: ['es2015'],
-    plugins: ['transform-decorators-legacy']
+    plugins: ['transform-decorators-legacy','transform-class-properties','transform-flow-strip-types']
   },
   onError: function(err){ console.error(err.toString()); },
   onLog: function(log){
