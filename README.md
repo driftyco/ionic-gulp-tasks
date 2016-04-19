@@ -14,6 +14,7 @@ The current list of tasks is:
 - [Fonts copy task](./fonts-copy)
 - [HTML copy task](./html-copy)
 - [Scripts copy task](./scripts-copy)
+- [Asset copy task](./assets-copy)
 
 #### Usage
 
@@ -31,7 +32,7 @@ gulp.task('build', buildWebpack);
 Each task takes an optional options object:
 ```
   gulp.task('watch', function(){
-    return webpackBuild({ watch: true });  
+    return webpackBuild({ watch: true });
   });
 ```
 
