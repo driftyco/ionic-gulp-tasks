@@ -7,8 +7,6 @@ var gulp = require('gulp'),
     source = require('vinyl-source-stream'),
     buffer = require('vinyl-buffer'),
     sourcemaps = require('gulp-sourcemaps'),
-    gulpif = require('gulp-if'),
-    lazypipe = require('lazypipe'),
     uglify = require('gulp-uglify');
 
 var defaultOptions = {
@@ -25,7 +23,9 @@ var defaultOptions = {
   watchifyOptions: {},
   tsifyOptions: {},
   uglifyOptions: {},
-  onError: function(err){ console.error(err.toString()); },
+  onError: function(err){
+    console.error(err.toString());
+  },
   onLog: function(log){
     console.log((log = log.split(' '), log[0] = pretty(log[0]), log.join(' ')));
   }
@@ -33,14 +33,6 @@ var defaultOptions = {
 
 module.exports = function(options) {
   var options = assign(defaultOptions, options);
-
-  var noSourcemapPipe = lazypipe()
-    .pipe(function(){ return gulpif(options.minify, uglify(options.uglifyOptions)) });
-
-  var sourcemapPipe = lazypipe()
-    .pipe(sourcemaps.init, { loadMaps: true })
-      .pipe(function(){ return gulpif(options.minify, uglify(options.uglifyOptions)) })
-    .pipe(sourcemaps.write, './');
 
   var b = browserify(options.src, options.browserifyOptions)
     .plugin(tsify, options.tsifyOptions);
@@ -54,13 +46,19 @@ module.exports = function(options) {
   return bundle();
 
   function bundle() {
-    return b.bundle()
+    var result = b.bundle()
       .on('error', options.onError)
       .pipe(source(options.outputFile))
-      .pipe(buffer())
-      .pipe(gulpif(options.browserifyOptions.debug, sourcemapPipe()))
-      .pipe(gulpif(!options.browserifyOptions.debug, noSourcemapPipe()))
-      .pipe(gulp.dest(options.outputPath));
+      .pipe(buffer());
+    
+    if (options.browserifyOptions.debug) {
+      result = result.pipe(sourcemaps.init({ loadMaps: true }));
+      if (options.minify) result = result.pipe(uglify(options.uglifyOptions));
+      result = result.pipe(sourcemaps.write('./'));
+    } else {
+      if (options.minify) result = result.pipe(uglify(options.uglifyOptions));
+    }
+    
+    return result.pipe(gulp.dest(options.outputPath));
   }
 }
-
