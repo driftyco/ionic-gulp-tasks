@@ -52,9 +52,9 @@ module.exports = function(options) {
       .pipe(buffer());
     
     if (options.browserifyOptions.debug) {
-      result = result.pipe(sourcemaps.init, { loadMaps: true });
+      result = result.pipe(sourcemaps.init({ loadMaps: true }));
       if (options.minify) result = result.pipe(uglify(options.uglifyOptions));
-      result = result.pipe(sourcemaps.write, './');
+      result = result.pipe(sourcemaps.write('./'));
     } else {
       if (options.minify) result = result.pipe(uglify(options.uglifyOptions));
     }
