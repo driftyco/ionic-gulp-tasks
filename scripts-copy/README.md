@@ -9,7 +9,13 @@ Returns a [stream](http://nodejs.org/api/stream.html) of [Vinyl files](https://g
 that can be [piped](http://nodejs.org/api/stream.html#stream_readable_pipe_destination_options).
 
 #### Available options:
-- **src** (String|Array) Glob or array of globs ([What's a glob?](https://github.com/isaacs/node-glob#glob-primer)) matching 3rd party script files. Default: `'node_modules/angular2/bundles/angular2-polyfills.js'`.
+- **src** (String|Array) Glob or array of globs ([What's a glob?](https://github.com/isaacs/node-glob#glob-primer)) matching 3rd party script files. Default:
+```
+[
+  'node_modules/es6-shim/es6-shim.min.js',
+  'node_modules/angular2/bundles/angular2-polyfills.js'
+]
+```.
 - **dest** (String) Output path for the HTML files. Default: `'www/build/js'`.
 
 ## Example
