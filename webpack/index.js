@@ -1,6 +1,6 @@
 var webpack = require('webpack'),
     Q = require('q'),
-    assign = require('lodash.assign');
+    merge = require('lodash.merge');
 
 var defaultOptions = {
   watch: false,
@@ -17,7 +17,7 @@ var defaultOptions = {
 
 module.exports = function(options) {
   var deferred = Q.defer();
-  options = assign(defaultOptions, options);
+  options = merge(defaultOptions, options);
   try {
     options.config = options.config || require(process.cwd() + '/webpack.config.js');
   } catch(e) {
