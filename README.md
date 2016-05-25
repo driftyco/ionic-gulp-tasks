@@ -13,6 +13,7 @@ The current list of tasks is:
 - [Sass build task](./sass-build)
 - [Fonts copy task](./fonts-copy)
 - [HTML copy task](./html-copy)
+- [CSS copy task](./css-copy)
 - [Scripts copy task](./scripts-copy)
 - [*ESlint task](https://github.com/devillex/ionic-gulp-eslint)
 
