@@ -12,7 +12,7 @@ var gulp = require('gulp'),
 
 var defaultOptions = {
   watch: false,
-  src: ['./app/app.ts', './typings/main.d.ts'],
+  src: ['./app/app.ts', './typings/index.d.ts'],
   outputPath: 'www/build/js/',
   outputFile: 'app.bundle.js',
   minify: false,
