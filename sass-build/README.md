@@ -13,6 +13,7 @@ that can be [piped](http://nodejs.org/api/stream.html#stream_readable_pipe_desti
 - **srcOptions** (Object) An object passed as second argument to [`gulp.src`](https://github.com/gulpjs/gulp/blob/master/docs/API.md#options). Default `{}`.
 - **dest** (String) Output path for the compiled CSS bundle(s). Default: `'www/build/css'`.
 - **sassOptions** (Object) [Sass options](https://github.com/sass/node-sass#options). Default:
+- **hookFunction** (Function) A function that takes the sass stream as input and returns a stream. Useful if additional transformations need to be piped. Default:
 ```
 {
   includePaths: [

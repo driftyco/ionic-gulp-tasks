@@ -23,6 +23,7 @@ var defaultOptions = {
     ],
     cascade: false
   },
+  hookFunction: function(stream) { return stream; },
   onError: function(err) {
     console.error(err.message);
     this.emit('end'); // Don't kill watch tasks - https://github.com/gulpjs/gulp/issues/259
@@ -32,9 +33,11 @@ var defaultOptions = {
 module.exports = function(options) {
   options = assign(defaultOptions, options);
 
-  return gulp.src(options.src, options.srcOptions)
+  var stream = gulp.src(options.src, options.srcOptions)
     .pipe(sass(options.sassOptions))
     .on('error', options.onError)
-    .pipe(autoprefixer(options.autoprefixerOptions))
+    .pipe(autoprefixer(options.autoprefixerOptions));
+
+  return options.hookFunction(stream)
     .pipe(gulp.dest(options.dest));
 }
