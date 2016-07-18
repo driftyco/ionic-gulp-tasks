@@ -10,6 +10,7 @@ that can be [piped](http://nodejs.org/api/stream.html#stream_readable_pipe_desti
 
 #### Available options:
 - **src** (String|Array) Glob or array of globs ([What's a glob?](https://github.com/isaacs/node-glob#glob-primer)) matching Sass entry files. Default: `'app/theme/app.+(ios|md|wp).scss'`.
+- **srcOptions** (Object) An object passed as second argument to [`gulp.src`](https://github.com/gulpjs/gulp/blob/master/docs/API.md#options). Default `{}`.
 - **dest** (String) Output path for the compiled CSS bundle(s). Default: `'www/build/css'`.
 - **sassOptions** (Object) [Sass options](https://github.com/sass/node-sass#options). Default:
 ```
@@ -61,8 +62,3 @@ gulp.task('sass', function(){
   });
 });
 ```
-
-
-
-
-

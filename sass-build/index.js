@@ -1,10 +1,11 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer')
+    autoprefixer = require('gulp-autoprefixer'),
     assign = require('lodash.assign');
 
 var defaultOptions = {
   src: 'app/theme/app.+(ios|md|wp).scss',
+  srcOptions: {},
   dest: 'www/build/css',
   sassOptions: {
     includePaths: [
@@ -31,7 +32,7 @@ var defaultOptions = {
 module.exports = function(options) {
   options = assign(defaultOptions, options);
 
-  return gulp.src(options.src)
+  return gulp.src(options.src, options.srcOptions)
     .pipe(sass(options.sassOptions))
     .on('error', options.onError)
     .pipe(autoprefixer(options.autoprefixerOptions))
