@@ -1,7 +1,7 @@
 {
   "name": "ionic-gulp-browserify-typescript",
   "description": "Gulp task for Ionic projects to transpile and bundle TypeScript sources with Browserify",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -14,7 +14,7 @@
     "gulp-uglify": "^1.5.3",
     "lodash.merge": "^4.3.2",
     "prettysize": "0.0.3",
-    "tsify": "^0.14.1",
+    "tsify": "^1.0.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
