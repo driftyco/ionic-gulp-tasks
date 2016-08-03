@@ -45,6 +45,10 @@ module.exports = function(options) {
   var b = browserify(options.src, options.browserifyOptions)
     .transform(babelify, options.babelifyOptions);
 
+  if (options.browserifyOptions.external) {
+    b.external(options.browserifyOptions.external);
+  }
+
   if (options.watch) {
     b = watchify(b, options.watchifyOptions);
     b.on('update', bundle);
