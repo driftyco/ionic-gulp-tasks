@@ -26,11 +26,23 @@ module.exports = function(options) {
   }
 
   function webpackCallback(err, stats) {
-    // print build stats and errors
-    console.log(stats.toString(options.statsOptions));
-    if (stats.hasErrors() ||
-      (stats.hasWarnings() && options.failOnWarning)) {
+    if (err) {
+      // handle fatal error
       deferred.reject(err);
+      return
+    } else if (stats) {
+      // print build stats and errors
+      console.log(stats.toString(options.statsOptions));
+      var jsonStats = stats.toJson();
+      if (stats.hasErrors()) {
+        // handle soft errors
+        deferred.reject(jsonStats.errors);
+        return
+      } else if (stats.hasWarnings() && options.failOnWarning) {
+        // handle warnings
+        deferred.reject(jsonStats.warnings);
+        return
+      }
     }
 
     deferred.resolve();
