@@ -12,34 +12,33 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     stream = require('stream');
 
-
-var defaultOptions = {
-  watch: false,
-  src: './app/app.js',
-  outputPath: 'www/build/js/',
-  outputFile: 'app.bundle.js',
-  minify: false,
-  browserifyOptions: {
-    cache: {},
-    packageCache: {},
-    debug: true
-  },
-  watchifyOptions: {},
-  babelifyOptions: {
-    presets: [babelES2015Preset],
-    plugins: [babelDecoratorsTransform]
-  },
-  uglifyOptions: {},
-  onError: function(err){
-    console.error(err.toString());
-    this.emit('end');
-  },
-  onLog: function(log){
-    console.log((log = log.split(' '), log[0] = pretty(log[0]), log.join(' ')));
-  }
-}
-
 module.exports = function(options) {
+  var defaultOptions = {
+    watch: false,
+    src: './app/app.js',
+    outputPath: 'www/build/js/',
+    outputFile: 'app.bundle.js',
+    minify: false,
+    browserifyOptions: {
+      cache: {},
+      packageCache: {},
+      debug: true
+    },
+    watchifyOptions: {},
+    babelifyOptions: {
+      presets: [babelES2015Preset],
+      plugins: [babelDecoratorsTransform]
+    },
+    uglifyOptions: {},
+    onError: function(err){
+      console.error(err.toString());
+      this.emit('end');
+    },
+    onLog: function(log){
+      console.log((log = log.split(' '), log[0] = pretty(log[0]), log.join(' ')));
+    }
+  }
+
   options = merge(defaultOptions, options);
 
   var b = browserify(options.src, options.browserifyOptions)
