@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     assign = require('lodash.assign');
 
 var defaultOptions = {
-  src: 'app/**/*.ts',
+  src: 'src/**/*.ts',
   tslintOptions: {
     configuration: 'tslint.json'
   },
