@@ -5,7 +5,7 @@ var gulp = require('gulp'),
 
 var defaultOptions = {
   src: 'src/theme/app.+(ios|md|wp).scss',
-  dest: 'www/build/css',
+  dest: 'dist/css',
   sassOptions: {
     includePaths: [
       'node_modules/ionic-angular',
