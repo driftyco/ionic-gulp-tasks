@@ -10,7 +10,7 @@ that can be [piped](http://nodejs.org/api/stream.html#stream_readable_pipe_desti
 
 #### Available options:
 - **watch** (boolean) Whether to watch for changes or not. Default: `false`.
-- **src** (string|File|Array) String, file object, or array of those types (they may be mixed) specifying Browserify entry file(s). Default: `['./app/app.ts', './typings/main.d.ts']`.
+- **src** (string|File|Array) String, file object, or array of those types (they may be mixed) specifying Browserify entry file(s). Default: `['./app/app.ts', './typings/index.d.ts']`.
 - **outputPath** (string) Output path for the bundle and sourcemaps. Default: `'www/build/js/'`.
 - **outputFile** (string) Name of the bundle. Default: `'app.bundle.js'`.
 - **minify** (boolean) Whether to minify the bundle using Uglify or not. Default: `false`.
