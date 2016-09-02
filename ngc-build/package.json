@@ -1,0 +1,13 @@
+{
+  "name": "ionic-ngc-build",
+  "description": "Series of functions/tasks to build Typescript code with ngc, and then tsc",
+  "version": "0.0.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/driftyco/ionic-gulp-tasks.git"
+  },
+  "dependencies": {
+    "vinyl-fs": "2.4.3"
+  }
+}
