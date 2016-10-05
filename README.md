@@ -3,7 +3,7 @@ Now that Ionic 2 is out of beta, please see the [ionic-app-scripts](https://gith
 
 ### Ionic Gulp tasks
 
-A curated collection of [Gulp](http://gulpjs.com/) tasks for building Ionic apps. Using these tasks allows you to stay up to date if the default Ionic 2 build changes while it is in Beta.
+A curated collection of [Gulp](http://gulpjs.com/) tasks for building Ionic apps. Using these tasks allows you to stay up to date if the default Ionic 2 build changes while it is in beta.
 
 #### Tasks
 
