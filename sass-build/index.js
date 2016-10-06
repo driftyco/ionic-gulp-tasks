@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer')
-    assign = require('lodash.assign');
+    autoprefixer = require('gulp-autoprefixer'),
+    merge = require('lodash.merge');
 
 var defaultOptions = {
   src: 'app/theme/app.+(ios|md|wp).scss',
@@ -29,7 +29,7 @@ var defaultOptions = {
 }
 
 module.exports = function(options) {
-  options = assign(defaultOptions, options);
+  options = merge(defaultOptions, options);
 
   return gulp.src(options.src)
     .pipe(sass(options.sassOptions))
