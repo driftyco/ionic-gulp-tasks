@@ -1,0 +1,13 @@
+{
+  "name": "ionic-gulp-assets-copy",
+  "description": "Gulp task for Ionic projects to copy Asset sources to a build directory",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/driftyco/ionic-gulp-tasks.git"
+  },
+  "version": "1.0.0",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
+}

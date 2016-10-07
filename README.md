@@ -19,6 +19,7 @@ The current list of tasks is:
 - [Scripts copy task](./scripts-copy)
 - [TSLint task](./lint-typescript)
 - [*ESlint task](https://github.com/devillex/ionic-gulp-eslint)
+- [Asset copy task](./assets-copy)
 
 
 \* Community maintained (not in this repo)
@@ -39,7 +40,7 @@ gulp.task('build', buildWebpack);
 Each task takes an optional options object:
 ```
   gulp.task('watch', function(){
-    return webpackBuild({ watch: true });  
+    return webpackBuild({ watch: true });
   });
 ```
 
