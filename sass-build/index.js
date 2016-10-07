@@ -4,7 +4,10 @@ var gulp = require('gulp'),
     assign = require('lodash.assign');
 
 var defaultOptions = {
-  src: 'app/theme/app.+(ios|md|wp).scss',
+  src:  [
+    'app/theme/app.+(ios|md|wp).scss',
+    'app/pages/**/*.scss'
+  ],
   dest: 'www/build/css',
   sassOptions: {
     includePaths: [
