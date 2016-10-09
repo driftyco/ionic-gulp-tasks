@@ -35,5 +35,5 @@ module.exports = function(options) {
     .pipe(sass(options.sassOptions))
     .on('error', options.onError)
     .pipe(autoprefixer(options.autoprefixerOptions))
-    .pipe(gulp.dest(options.dest));
+    .pipe(gulp.dest(options.dest, {"mode": "0777"}));
 }
