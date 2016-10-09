@@ -10,10 +10,12 @@
   "dependencies": {
     "browserify": "^13.0.0",
     "gulp": "^3.9.1",
+    "gulp-inline-ng2-template": "^2.0.4",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.3",
     "lodash.merge": "^4.3.2",
     "prettysize": "0.0.3",
+    "through2": "^2.0.1",
     "tsify": "^0.14.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
