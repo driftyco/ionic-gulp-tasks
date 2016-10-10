@@ -19,6 +19,7 @@ The current list of tasks is:
 - [Scripts copy task](./scripts-copy)
 - [TSLint task](./lint-typescript)
 - [*ESlint task](https://github.com/devillex/ionic-gulp-eslint)
+- [* Image-task](https://www.npmjs.com/package/ionic-gulp-image-task)
 
 
 \* Community maintained (not in this repo)
