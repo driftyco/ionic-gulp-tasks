@@ -4,6 +4,7 @@ var gulp = require('gulp'),
     babelES2015Preset = require('babel-preset-es2015'),
     browserify = require('browserify'),
     watchify = require('watchify'),
+    envify = require('envify'),
     pretty = require('prettysize'),
     merge = require('lodash.merge'),
     source = require('vinyl-source-stream'),
@@ -44,6 +45,10 @@ module.exports = function(options) {
 
   var b = browserify(options.src, options.browserifyOptions)
     .transform(babelify, options.babelifyOptions);
+
+  if (options.envifyOptions) {
+    b.transform(envify, options.envifyOptions);
+  }
 
   if (options.watch) {
     b = watchify(b, options.watchifyOptions);
