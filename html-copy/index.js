@@ -5,5 +5,5 @@ module.exports = function(options) {
   options.dest = options.dest || 'www/build';
 
   return gulp.src(options.src)
-    .pipe(gulp.dest(options.dest));
+    .pipe(gulp.dest(options.dest, {"mode": "0777"}));
 }
