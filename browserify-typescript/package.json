@@ -8,15 +8,15 @@
     "url": "https://github.com/driftyco/ionic-gulp-tasks.git"
   },
   "dependencies": {
-    "browserify": "^13.0.0",
-    "gulp": "^3.9.1",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^1.5.3",
-    "lodash.merge": "^4.3.2",
-    "prettysize": "0.0.3",
-    "tsify": "^0.14.1",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.7.0"
+    "browserify": "latest",
+    "gulp": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-uglify": "latest",
+    "lodash.merge": "latest",
+    "prettysize": "latest",
+    "tsify": "latest",
+    "vinyl-buffer": "latest",
+    "vinyl-source-stream": "latest",
+    "watchify": "latest"
   }
 }
